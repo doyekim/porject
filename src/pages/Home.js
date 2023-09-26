@@ -26,10 +26,12 @@ export default function Home() {
             {data
               .filter(item => item.prdct_nm_korean === value)
               .map(item => (
-                <div key={item.id}>
+                <div className="ddd" key={item.id}>
                   <div className='imgs' style={{ backgroundImage: `url(${item.thumb_image})`, width: '200px', height: '250px', backgroundSize: 'cover', position: 'relative' }} alt={item.prdct_nm_korean} />
+                  <div className="overlay-text">{item.matrl_technic}</div>
                 </div>
                 // 여기에 이미지 overlay opacity값으로 줘야함
+
               ))}
           </div>
         ))}

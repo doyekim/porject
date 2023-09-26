@@ -11,12 +11,11 @@ img {
     text-align: center;
   }
   .App {
-    gap: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    margin-top: 20px;
+
   }
 
   .App .item {
@@ -65,7 +64,7 @@ li{
   margin: 0 auto;
   text-align: center;
   padding: 15px;
-  border: 1px solid black;
+
 }
 .formInput > input{
   width: 60%;
@@ -73,5 +72,23 @@ li{
   padding: 10px;
   border-radius: 20px;
 }
+
+.formInput > input:nth-child(2){
+  width: 25%;
+  background-color: black;
+  color: white;
+}
+.item{
+  position: relative;
+  margin: 10px 0;
+}
+.ddd{
+
+
+}
+.overlay-text{
+
+}
+
 
 }
