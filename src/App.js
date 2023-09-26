@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BottomNavbar from './pages/BottomNavbar';
 import List from './pages/List';
 import Detail from './pages/Detail';
+import AuthorDetail from './pages/AuthorDetail';
 
 
 
@@ -11,16 +12,18 @@ import Detail from './pages/Detail';
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/porject'>
       <main>
-        <Home />
         <Routes>
-          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<Home />} />
+          {/* home페이지가 기본으로 제일 처음 보일 페이지라서 경로 설정 */}
           <Route path='/List' element={<List />} />
           <Route path='/Detail' element={<Detail />} />
+          <Route path="/author/:id" element={<AuthorDetail />} />
         </Routes>
       </main>
       <BottomNavbar />
+      {/* 모든 페이지에서 보여야하는 부분이기에 넣어주기 */}
     </BrowserRouter>
   );
 }

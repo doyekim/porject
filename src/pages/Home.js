@@ -16,7 +16,6 @@ export default function Home() {
   const filteredData = ['무속', '억새는 지다 1', '공 87 - 7', '행복의 부피 1807', 'Bubble', '나를 불태우다']
 
 
-
   return (
     <article>
       <h2>장르별 작품 보기</h2>

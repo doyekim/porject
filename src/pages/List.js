@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom'; // React Router 임포트
+import AuthorDetail from './AuthorDetail';
 
 export default function List() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]); // 검색 결과를 저장할 상태 추가
-
+  const navigate = useNavigate(); // useNavigate 훅을 사용하여 페이지 이동 함수 가져오기
 
   useEffect(() => {
     axios.get('/Data.json')
@@ -13,7 +15,6 @@ export default function List() {
         setData(response.data.DATA);
       })
   }, []);
-
 
   // 검색어에 따라 데이터 필터링
   const filteredData = data.filter(item => {
@@ -26,10 +27,9 @@ export default function List() {
   };
 
   return (
-
     <div>
       {/* 검색 입력 필드 */}
-      <form className='formInput'>
+      <form className='formInput' onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="작가 이름 검색"
@@ -53,11 +53,10 @@ export default function List() {
               {/* 각 아이템의 내용을 표시 */}
               {item.writr_nm}
               {/* 클릭 시 작가별 작품보기 detail 페이지로 이동할 링크를 추가 */}
-              <a href={`/author/${item.authorId}`}>작품보기</a>
+              <Link to={`/author/${item.writr_nm}`} onClick={() => navigate(`/author/${item.authorId}`)}>작품보기</Link>
             </li>
           ))}
       </ul>
     </div>
-
   )
 }

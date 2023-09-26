@@ -17,7 +17,7 @@ function BottomNavbar() {
         Search
       </Link>
 
-      <Link to = "/Home"
+      <Link to = "/"
         className={activeTab === 'Tab2' ? 'nav-item active' : 'nav-item'}
         onClick={() => handleTabClick('Tab2')}
         >
