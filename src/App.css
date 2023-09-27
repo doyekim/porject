@@ -7,13 +7,16 @@ img {
 
 
 @media screen and (max-width: 480px) {
+  .mainbox{
+    width: 480px;
+  }
   article > h2{
     text-align: center;
   }
   .App {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-end;
     width: 100%;
 
   }
@@ -24,7 +27,7 @@ img {
   }
   
   .App > div {
-    border: 1px solid #ddd;
+    align-items: center;
     text-align: center;
   }
   
@@ -82,12 +85,14 @@ li{
   position: relative;
   margin: 10px 0;
 }
-.ddd{
 
-
-}
 .overlay-text{
-
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(50%, 500%);
+  color: white;
+  font-weight: bold;
 }
 
 

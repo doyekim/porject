@@ -11,7 +11,7 @@ export default function List() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('/Data.json')
+    axios.get('/porject/Data.json')
       .then(response => {
         setData(response.data.DATA);
       })

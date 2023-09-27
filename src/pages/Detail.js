@@ -5,7 +5,7 @@ function Detail() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('/ingData.json')
+    axios.get('/porject/ingData.json')
       .then(response => {
         setData(response.data.DATA);
       })

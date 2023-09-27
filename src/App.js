@@ -19,7 +19,6 @@ function App() {
           {/* home페이지가 기본으로 제일 처음 보일 페이지라서 경로 설정 */}
           <Route path='/List' element={<List />} />
           <Route path='/Detail' element={<Detail />} />
-          <Route path="/author/:id" element={<AuthorDetail />} />
         </Routes>
       </main>
       <BottomNavbar />
