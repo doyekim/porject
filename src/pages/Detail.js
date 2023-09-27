@@ -11,9 +11,9 @@ function Detail() {
       })
   }, []);
   return (
-    <div>
+    <div className='ingnow'>
       <h1>전시 일정</h1>
-      <ul>
+      <ul className='ingul'>
         {data.map((item) => (
           <li key={item.id}>
             <img src={item.dp_main_img} alt={`대표 이미지 ${item.id}`} />
